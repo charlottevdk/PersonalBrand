@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charlotte van den Kerkhoff — Personal Brand</title>
+<meta name="description" content="Charlotte van den Kerkhoff — final-year Commercial Economics student and marketing intern at Stryker OI Northern Europe. Turning market intelligence into commercial decisions.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root{
+  --bg:#FAF7F2; --white:#FFFFFF; --black:#141414;
+  --gray:#6A6A6A; --gray-light:#9A9A9A;
+  --border:#E4DFD8;
+  --mist:#7BAFC8; --mist-light:#D8EAF3; --mist-pale:#EDF5FA;
+  --sand:#C4985C; --sand-light:#F2E5D0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;line-height:1.6}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(250,247,242,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Fraunces',serif;font-style:italic;font-size:1.2rem;font-weight:600;color:var(--black);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-size:0.71rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color 0.2s;min-height:44px;display:inline-flex;align-items:center}
+.nav-links a:hover{color:var(--black)}
+.nav-cta{background:var(--black)!important;color:var(--white)!important;padding:0.65rem 1.4rem;border-radius:50px;transition:background 0.2s!important}
+.nav-cta:hover{background:var(--mist)!important;color:var(--white)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.28s ease,opacity 0.28s ease;border-radius:1px}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-panel{display:none;position:fixed;top:60px;left:0;right:0;z-index:190;background:var(--bg);border-bottom:1px solid var(--border);padding:1rem 2rem 1.5rem;flex-direction:column}
+.nav-panel.open{display:flex}
+.nav-panel a{font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray);text-decoration:none;padding:0.9rem 0;border-bottom:1px solid var(--border);min-height:48px;display:flex;align-items:center}
+.nav-panel a:last-child{border-bottom:none}
+
+/* ── HERO ── */
+.hero{min-height:92vh;padding:8rem 4rem 4rem;display:grid;grid-template-columns:1fr 360px;gap:4rem;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:0.6rem;background:var(--mist-pale);color:var(--mist);border:1px solid var(--mist-light);border-radius:50px;padding:0.4rem 1rem;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.6rem}
+.eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--mist);flex-shrink:0}
+.hero-name{font-family:'Fraunces',serif;font-size:clamp(2.9rem,5.5vw,5.2rem);font-weight:700;line-height:1.02;letter-spacing:-0.01em;margin-bottom:1.4rem}
+.hero-name em{font-style:italic;font-weight:300;color:var(--mist)}
+.hero-prop{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:400;line-height:1.55;max-width:480px;margin-bottom:0.9rem}
+.hero-sub{color:var(--gray);font-size:0.85rem;font-weight:300;margin-bottom:2.2rem;max-width:480px;line-height:1.8}
+.hero-btns{display:flex;gap:0.9rem;flex-wrap:wrap}
+.btn-primary{background:var(--black);color:var(--white);padding:0.95rem 2.2rem;border-radius:50px;font-size:0.73rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:48px;transition:background 0.2s}
+.btn-primary:hover{background:var(--mist)}
+.btn-ghost{color:var(--black);padding:0.95rem 2.2rem;border-radius:50px;font-size:0.73rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:48px;border:1.5px solid var(--border);transition:border-color 0.2s,background 0.2s}
+.btn-ghost:hover{border-color:var(--mist);background:var(--mist-pale)}
+.hero-photo{display:flex;justify-content:center}
+.photo-wrap{width:100%;max-width:340px;aspect-ratio:4/5;border-radius:55% 45% 48% 52%/50% 52% 48% 50%;overflow:hidden;background:var(--mist-light);box-shadow:0 20px 50px rgba(20,20,20,0.1);position:relative;display:flex;align-items:center;justify-content:center}
+.photo-mono{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:4.2rem;color:var(--mist)}
+.photo-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+
+/* ── SECTION BASE ── */
+.section{padding:5rem 4rem}
+.bg-white{background:var(--white)}
+.bg-default{background:var(--bg)}
+.label{font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:0.7rem;margin-bottom:0.7rem}
+.label::before{content:'';display:block;width:1.8rem;height:1.5px;background:var(--sand);flex-shrink:0}
+.section h2{font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:700;line-height:1.15;margin-bottom:1rem}
+.section h2 em{font-style:italic;font-weight:300;color:var(--mist)}
+.section-intro{color:var(--gray);font-size:0.92rem;line-height:1.8;font-weight:300;max-width:560px;margin-bottom:2.5rem}
+
+/* ── WORK ── */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:1.1rem}
+.work-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.8rem;transition:transform 0.25s,box-shadow 0.25s,border-color 0.2s}
+.work-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(20,20,20,0.08);border-color:var(--mist-light)}
+.work-tag{display:inline-block;font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mist);background:var(--mist-pale);border:1px solid var(--mist-light);border-radius:50px;padding:0.25rem 0.8rem;margin-bottom:0.8rem}
+.work-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;line-height:1.35;margin-bottom:0.8rem}
+.work-body{font-size:0.84rem;color:var(--gray);line-height:1.75;font-weight:300}
+.work-body p{margin-bottom:0.6rem}
+.work-metric{margin-top:1rem;background:var(--mist-pale);border-left:2.5px solid var(--mist);border-radius:0 10px 10px 0;padding:0.8rem 1rem;font-size:0.85rem;font-weight:600;color:var(--black)}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.quote{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.6rem}
+.quote-text{font-family:'Fraunces',serif;font-style:italic;font-size:1rem;line-height:1.6;margin-bottom:0.6rem}
+.quote-who{font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray)}
+.quote-role{font-size:0.68rem;color:var(--mist)}
+
+/* ── ABOUT ── */
+.about-text{max-width:640px;margin-bottom:2.5rem}
+.about-text p{color:var(--gray);font-size:0.92rem;line-height:1.9;font-weight:300;margin-bottom:1rem}
+.about-text strong{color:var(--black);font-weight:600}
+.video-frame{max-width:720px;aspect-ratio:16/9;border:2px dashed var(--border);border-radius:16px;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;text-align:center;padding:2rem}
+.video-emoji{font-size:2.2rem}
+.video-title{font-size:0.95rem;font-weight:600}
+.video-sub{font-size:0.78rem;color:var(--gray);font-weight:300;max-width:380px;line-height:1.7}
+
+/* ── QUADRANTS ── */
+.quad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.quad-card{background:var(--bg);border-radius:16px;padding:1.7rem;border:1px solid var(--border)}
+.quad-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:1.1rem;line-height:1.35}
+.quad-row{margin-bottom:0.9rem}
+.quad-row:last-child{margin-bottom:0}
+.quad-label{font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mist);margin-bottom:0.25rem}
+.quad-text{font-size:0.8rem;color:var(--gray);line-height:1.7;font-weight:300}
+
+/* ── SKILLS ── */
+.skill-row{display:grid;grid-template-columns:220px 1fr 1fr;gap:1.5rem;padding:1.3rem 0;border-bottom:1px solid var(--border);align-items:start}
+.skill-row:first-child{border-top:1px solid var(--border)}
+.skill-name{font-weight:600;font-size:0.9rem}
+.skill-desc{font-size:0.83rem;color:var(--gray);font-weight:300;line-height:1.7}
+.skill-proof{font-size:0.83rem;line-height:1.7;font-weight:300;color:var(--gray)}
+.skill-proof strong{display:block;font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist);margin-bottom:0.25rem}
+
+/* ── FUTURE BAND ── */
+.future-band{background:var(--mist-pale);border-top:1px solid var(--mist-light);border-bottom:1px solid var(--mist-light);padding:3.5rem 4rem;text-align:center}
+.future-band .label{color:var(--mist);justify-content:center}
+.future-band h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:1rem}
+.future-band h2 em{font-style:italic;font-weight:300;color:var(--mist)}
+.future-band p{max-width:620px;margin:0 auto;color:var(--gray);font-size:0.92rem;font-weight:300;line-height:1.85}
+
+/* ── CV ── */
+.cv-cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 4rem;align-items:start}
+.cv-block{margin-bottom:2rem}
+.cv-block:last-child{margin-bottom:0}
+.cv-block h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:1rem}
+.cv-item{margin-bottom:1rem}
+.cv-item:last-child{margin-bottom:0}
+.cv-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.cv-role{font-size:0.87rem;font-weight:600}
+.cv-date{font-size:0.7rem;color:var(--gray-light);font-weight:300;white-space:nowrap}
+.cv-org{font-size:0.7rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--mist);margin:0.15rem 0 0.3rem}
+.cv-desc{font-size:0.82rem;color:var(--gray);line-height:1.7;font-weight:300}
+.cv-list{list-style:none}
+.cv-list li{font-size:0.82rem;color:var(--gray);line-height:1.7;font-weight:300;margin-bottom:0.4rem;padding-left:1.1rem;position:relative}
+.cv-list li::before{content:'\2013';position:absolute;left:0;color:var(--sand)}
+.cv-list strong{color:var(--black);font-weight:600}
+
+/* ── CONTACT ── */
+.contact-wrap{padding:5.5rem 4rem;background:var(--black);text-align:center}
+.contact-inner{max-width:520px;margin:0 auto}
+.contact-wrap .label{color:rgba(164,200,220,0.75);justify-content:center}
+.contact-wrap h2{font-family:'Fraunces',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;margin-bottom:0.8rem;color:var(--white)}
+.contact-wrap h2 em{font-style:italic;font-weight:300;color:rgba(164,200,220,0.85)}
+.contact-sub{color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.8;font-weight:300;margin-bottom:2.2rem}
+.contact-links{display:flex;justify-content:center;gap:0.8rem;flex-wrap:wrap}
+.contact-link{display:inline-flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.78rem;padding:0.85rem 1.6rem;min-height:48px;border:1px solid rgba(255,255,255,0.12);border-radius:50px;transition:border-color 0.2s,color 0.2s,background 0.2s}
+.contact-link:hover{border-color:var(--mist);color:var(--white);background:rgba(123,175,200,0.1)}
+footer{padding:1.5rem 4rem;background:var(--black);border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
+footer span{font-size:0.71rem;color:rgba(255,255,255,0.24)}
+footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+
+/* ── FADE IN ── */
+.fu{opacity:0;transform:translateY(22px);animation:fadeup 0.7s cubic-bezier(0.34,1.2,0.64,1) forwards}
+@keyframes fadeup{to{opacity:1;transform:translateY(0)}}
+.d1{animation-delay:0.1s}.d2{animation-delay:0.22s}.d3{animation-delay:0.34s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  nav,.hero,.section,.future-band,.contact-wrap,footer{padding-left:2.5rem;padding-right:2.5rem}
+  .hero{grid-template-columns:1fr;gap:3rem;text-align:center;padding-top:7rem}
+  .hero-prop,.hero-sub{max-width:100%}
+  .hero-btns{justify-content:center}
+  .photo-wrap{max-width:280px}
+  .quad-grid{grid-template-columns:repeat(2,1fr)}
+  .skill-row{grid-template-columns:1fr 1fr}
+  .skill-name{grid-column:1/-1}
+  .cv-cols{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.4rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero,.section,.future-band,.contact-wrap,footer{padding-left:1.4rem;padding-right:1.4rem}
+  .hero{padding-top:6.5rem;padding-bottom:3rem;min-height:auto}
+  .photo-wrap{max-width:230px}
+  .work-grid{grid-template-columns:1fr}
+  .quotes{grid-template-columns:1fr}
+  .quad-grid{grid-template-columns:1fr}
+  .skill-row{grid-template-columns:1fr;gap:0.4rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo">Charlotte van den Kerkhoff</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="mailto:charlotte.van.den.kerkhoff@hva.nl" class="nav-cta">Get in touch</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-panel" id="panel">
+  <a href="#about">About</a>
+  <a href="#work">Work</a>
+  <a href="#skills">Skills</a>
+  <a href="#cv">CV</a>
+  <a href="#contact">Contact</a>
+  <a href="mailto:charlotte.van.den.kerkhoff@hva.nl">Get in touch</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div>
+    <div class="eyebrow fu"><span class="eyebrow-dot"></span>Personal brand &mdash; Commercial Economics, Amsterdam University of Applied Sciences</div>
+    <h1 class="hero-name fu d1">Charlotte<br>van den <em>Kerkhoff</em></h1>
+    <p class="hero-prop fu d2">I help organisations turn market intelligence into commercial decisions &mdash; through analysis, communication, and ownership.</p>
+    <p class="hero-sub fu d2">Final-year Commercial Economics student &middot; Marketing intern at Stryker OI Northern Europe &middot; Amsterdam</p>
+    <div class="hero-btns fu d3">
+      <a href="#cv" class="btn-primary">View my CV</a>
+      <a href="mailto:charlotte.van.den.kerkhoff@hva.nl" class="btn-ghost">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-photo fu d2">
+    <div class="photo-wrap">
+      <div class="photo-mono">CK</div>
+      <!-- Upload your profile photo as charlotte.jpg in the repo root -->
+      <img src="charlotte.jpg" alt="Charlotte van den Kerkhoff" onerror="this.style.display='none'">
+    </div>
+  </div>
+</header>
+
+<!-- WORK -->
+<section class="section bg-white" id="work">
+  <div class="label">Proof</div>
+  <h2>Selected <em>work</em></h2>
+  <p class="section-intro">Four projects I owned end-to-end at Stryker OI Northern Europe &mdash; the strongest evidence of how I work.</p>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-tag">AI Adoption</div>
+      <div class="work-title">Copilot &mdash; &ldquo;The 15-Minute Gift&rdquo;</div>
+      <div class="work-body">
+        <p>After exploring Microsoft Copilot on my own time, I saw real potential to save the commercial team hours each week.</p>
+        <p>I developed four use cases with worked examples &mdash; meeting summaries, email drafting, pre-call briefings, competitive insight synthesis &mdash; presented them live to a 5-country team, and created a Stryker-specific Cheat Sheet.</p>
+      </div>
+      <div class="work-metric">4 use cases &middot; 5 countries reached &middot; started unassigned</div>
+    </div>
+    <div class="work-card">
+      <div class="work-tag">Market Research</div>
+      <div class="work-title">MIS Foot Market Intelligence</div>
+      <div class="work-body">
+        <p>Stryker needed a clear picture of two high-growth surgical segments &mdash; MIS Foot and Orthognathic &mdash; across the Benelux.</p>
+        <p>I wrote a six-chapter report, from procedure volumes and competitive mapping to a portfolio gap assessment that reframed a product finding as a commercial question.</p>
+      </div>
+      <div class="work-metric">Small Bone portfolio gap surfaced as a revenue signal</div>
+    </div>
+    <div class="work-card">
+      <div class="work-tag">Operations</div>
+      <div class="work-title">Jetpak Warehouse Audit</div>
+      <div class="work-body">
+        <p>26 branded exhibition banners were registered as stored at the Jetpak warehouse in Mechelen &mdash; on paper.</p>
+        <p>I led a physical audit with a three-person team and ran a root-cause analysis on what we actually found, then recommended a check-in/check-out system with assigned ownership.</p>
+      </div>
+      <div class="work-metric">6 of 26 banners located &middot; 3 structural root causes found</div>
+    </div>
+    <div class="work-card">
+      <div class="work-tag">Events</div>
+      <div class="work-title">LVO Congress ROI Framework</div>
+      <div class="work-body">
+        <p>The LVO Congress 2026 in Hilversum was one of Stryker OI&apos;s most important Dutch commercial touchpoints.</p>
+        <p>I designed a Microsoft Forms lead-generation system, built a post-event ROI framework, and analysed five relevant congresses for commercial relevance &mdash; so future events are chosen on data, not habit.</p>
+      </div>
+      <div class="work-metric">Event spend linked to leads &middot; repeatable method for future events</div>
+    </div>
+  </div>
+  <div class="quotes">
+    <div class="quote">
+      <div class="quote-text">&ldquo;I applaud the initiative, this is well needed!&rdquo;</div>
+      <div class="quote-who">Alexis Michaud</div>
+      <div class="quote-role">Stryker OI Northern Europe</div>
+    </div>
+    <div class="quote">
+      <div class="quote-text">&ldquo;Using Copilot and learning to use it in our benefit&hellip; We need to work smarter, not harder.&rdquo;</div>
+      <div class="quote-who">Juha Soininen</div>
+      <div class="quote-role">Director of Marketing, Stryker OI Northern Europe</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section bg-default" id="about">
+  <div class="label">Who I am</div>
+  <h2>Who I <em>am</em></h2>
+  <div class="about-text">
+    <p>I&apos;m a final-year <strong>Commercial Economics</strong> student at the Amsterdam University of Applied Sciences, completing my internship at <strong>Stryker Orthopaedic Instruments Northern Europe</strong>. I graduate as valedictorian with a GPA of 8.2.</p>
+    <p>My work sits at the intersection of <strong>analytical thinking and communication</strong> &mdash; I turn complex information into commercially relevant decisions. I want to build a career in <strong>MedTech or a similarly complex B2B sector</strong>, where rigour and purpose reinforce each other.</p>
+  </div>
+  <div class="video-frame">
+    <div class="video-emoji">&#x1F3AC;</div>
+    <div class="video-title">Personal video &mdash; coming soon</div>
+    <div class="video-sub">A 60-second introduction &mdash; recording in progress.</div>
+  </div>
+  <!-- When your video is ready, replace the .video-frame div above with: <video controls preload="metadata" src="personal-video.mp4" style="width:100%;border-radius:16px"></video> -->
+</section>
+
+<!-- CORE QUADRANTS (not in nav — kept for the university assessment) -->
+<!-- CONCEPT — Charlotte validates the content -->
+<section class="section bg-white" id="kernkwadranten">
+  <div class="label">How I work</div>
+  <h2>My <em>core quadrants</em></h2>
+  <p class="section-intro">Everyone has qualities &mdash; and every quality has a pitfall when overdone. These core quadrants (Ofman) map my strengths, what happens when I push them too far, and what I am working on.</p>
+  <div class="quad-grid">
+    <div class="quad-card">
+      <div class="quad-title">Drive &amp; independence</div>
+      <div class="quad-row"><div class="quad-label">Strength</div><div class="quad-text">I take ownership and finish what I start &mdash; the Copilot initiative I set up unassigned, my 8-week training programme.</div></div>
+      <div class="quad-row"><div class="quad-label">Pitfall</div><div class="quad-text">Wanting to do everything myself; impatience with other people&apos;s pace; holding too much control.</div></div>
+      <div class="quad-row"><div class="quad-label">Challenge</div><div class="quad-text">Delegate, give trust, leave room for others&apos; ways of working.</div></div>
+      <div class="quad-row"><div class="quad-label">Allergy</div><div class="quad-text">Passivity and waiting around in others.</div></div>
+    </div>
+    <div class="quad-card">
+      <div class="quad-title">Analytical thinking</div>
+      <div class="quad-row"><div class="quad-label">Strength</div><div class="quad-text">From data to insight to recommendation &mdash; the MIS Foot intelligence report, the Jetpak root-cause analysis.</div></div>
+      <div class="quad-row"><div class="quad-label">Pitfall</div><div class="quad-text">Over-analysing; preferring a &lsquo;perfect&rsquo; analysis over a timely decision.</div></div>
+      <div class="quad-row"><div class="quad-label">Challenge</div><div class="quad-text">Cut knots in time; act pragmatically on 80% of the information.</div></div>
+      <div class="quad-row"><div class="quad-label">Allergy</div><div class="quad-text">Superficiality and gut-feel decisions.</div></div>
+    </div>
+    <div class="quad-card">
+      <div class="quad-title">Directness</div>
+      <div class="quad-row"><div class="quad-label">Strength</div><div class="quad-text">I name what I see, without detours.</div></div>
+      <div class="quad-row"><div class="quad-label">Pitfall</div><div class="quad-text">Correcting too sharply; attacking the other person&apos;s premise head-on.</div></div>
+      <div class="quad-row"><div class="quad-label">Challenge</div><div class="quad-text">Frame my position diplomatically; let the other person finish first.</div></div>
+      <div class="quad-row"><div class="quad-label">Allergy</div><div class="quad-text">Vagueness and beating about the bush.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section bg-default" id="skills">
+  <div class="label">Capabilities</div>
+  <h2>Skills, <em>with proof</em></h2>
+  <p class="section-intro">No skill bars &mdash; every capability below is tied to something I actually did.</p>
+  <div class="skill-row">
+    <div class="skill-name">Analytical Thinking</div>
+    <div class="skill-desc">From data to insight to recommendation &mdash; not stopping at description.</div>
+    <div class="skill-proof"><strong>Proof</strong>MIS Foot report: identified the Small Bone portfolio gap as a revenue signal.</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-name">Communication</div>
+    <div class="skill-desc">The right message for the right audience &mdash; written, spoken, internal, external.</div>
+    <div class="skill-proof"><strong>Proof</strong>Live Copilot demo to a 5-country team, plus a one-page Stryker Cheat Sheet.</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-name">Commercial Awareness</div>
+    <div class="skill-desc">Connecting marketing activity to business outcomes.</div>
+    <div class="skill-proof"><strong>Proof</strong>LVO ROI framework linking event spend to generated leads.</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-name">Self-Directed Initiative</div>
+    <div class="skill-desc">Spotting opportunities no one assigned.</div>
+    <div class="skill-proof"><strong>Proof</strong>Copilot &ldquo;The 15-Minute Gift&rdquo; &mdash; built from scratch, presented to five countries.</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-name">Cross-Cultural Collaboration</div>
+    <div class="skill-desc">Working effectively across a 5-country Northern Europe team.</div>
+    <div class="skill-proof"><strong>Proof</strong>Jetpak audit in Mechelen with an international three-person team.</div>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<div class="future-band" id="future">
+  <div class="label">Ambition</div>
+  <h2>What&apos;s <em>next</em></h2>
+  <p>After graduating in 2027, I want a graduate role at an international, data-driven organisation in MedTech or complex B2B &mdash; a place where data informs decisions and I have real ownership of work that matters. Purpose and performance are both non-negotiable for me.</p>
+</div>
+
+<!-- CV -->
+<!-- CONCEPT CV — Charlotte validates all facts -->
+<section class="section bg-white" id="cv">
+  <div class="label">Curriculum vitae</div>
+  <h2>My <em>CV</em></h2>
+  <div class="cv-cols">
+    <div>
+      <div class="cv-block">
+        <h3>Experience</h3>
+        <div class="cv-item">
+          <div class="cv-head"><span class="cv-role">Marketing Intern</span><span class="cv-date">Feb 2026 &ndash; Present</span></div>
+          <div class="cv-org">Stryker OI Northern Europe</div>
+          <p class="cv-desc">End-to-end ownership of five commercial projects in a 5-country team: LVO congress, MIS Foot intelligence, Jetpak audit, Copilot adoption, OI Academy 201 certification.</p>
+        </div>
+        <div class="cv-item">
+          <div class="cv-head"><span class="cv-role">Research Project</span><span class="cv-date">2025</span></div>
+          <div class="cv-org">AI Foundry (HvA)</div>
+          <p class="cv-desc">Applied AI tools in a structured research and advisory context.</p>
+        </div>
+        <div class="cv-item">
+          <div class="cv-head"><span class="cv-role">Marketing &amp; Communications</span><span class="cv-date">2024</span></div>
+          <div class="cv-org">Love the Look</div>
+          <p class="cv-desc">Content creation, social media strategy and campaign coordination for a lifestyle brand.</p>
+        </div>
+        <div class="cv-item">
+          <div class="cv-head"><span class="cv-role">Brand &amp; Retail Experience</span><span class="cv-date">2023</span></div>
+          <div class="cv-org">CHANEL</div>
+          <p class="cv-desc">Luxury standards, client-facing communication, and the commercial discipline of a global luxury house.</p>
+        </div>
+      </div>
+      <div class="cv-block">
+        <h3>Education</h3>
+        <div class="cv-item">
+          <div class="cv-head"><span class="cv-role">BSc Commercial Economics</span><span class="cv-date">2023 &ndash; 2027</span></div>
+          <div class="cv-org">Hogeschool van Amsterdam</div>
+          <p class="cv-desc">Graduating as valedictorian with a GPA of 8.2.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="cv-block">
+        <h3>Skills</h3>
+        <ul class="cv-list">
+          <li><strong>Design:</strong> InDesign, Photoshop, Illustrator, Canva</li>
+          <li><strong>Data:</strong> Excel (advanced), Google Analytics, Tableau, HubSpot</li>
+          <li><strong>Digital:</strong> WordPress, Office 365, SharePoint</li>
+          <li><strong>AI:</strong> Copilot, ChatGPT, Gemini, Claude</li>
+        </ul>
+      </div>
+      <div class="cv-block">
+        <h3>Languages</h3>
+        <ul class="cv-list">
+          <li><strong>Dutch</strong> &mdash; native</li>
+          <li><strong>English</strong> &mdash; fluent</li>
+        </ul>
+      </div>
+      <div class="cv-block">
+        <h3>Certification</h3>
+        <ul class="cv-list">
+          <li><strong>OI Academy 201</strong> &mdash; clinical certification, passed with 80% (Mar 2026)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <div class="label">Get in touch</div>
+    <h2>Let&apos;s <em>talk</em></h2>
+    <p class="contact-sub">Currently looking for a graduate role &mdash; happy to talk.</p>
+    <div class="contact-links">
+      <a href="mailto:charlotte.van.den.kerkhoff@hva.nl" class="contact-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email me
+      </a>
+      <a href="https://www.linkedin.com/in/charlottevandenkerkhoff" target="_blank" class="contact-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+<footer>
+  <span>&copy; 2026 Charlotte van den Kerkhoff</span>
+  <a href="#top">Back to top &uarr;</a>
+</footer>
+
+<script>
+const ham=document.getElementById('ham'),panel=document.getElementById('panel');
+ham.addEventListener('click',()=>{ham.classList.toggle('open');panel.classList.toggle('open')});
+panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');panel.classList.remove('open')}));
+</script>
+</body>
+</html>
