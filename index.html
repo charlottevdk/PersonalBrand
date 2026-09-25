@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Charlotte van den Kerkhoff — Personal Brand</title>
-<meta name="description" content="Charlotte van den Kerkhoff — final-year Commercial Economics student and marketing intern at Stryker OI Northern Europe. Turning market intelligence into commercial decisions.">
+<meta name="description" content="Charlotte van den Kerkhoff — final-year Commercial Economics student; marketing internship at Stryker OI Northern Europe (2026). Turning market intelligence into commercial decisions.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ── TOKENS ── */
@@ -17,6 +17,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+section[id],div[id]{scroll-margin-top:72px}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;line-height:1.6}
 
 /* ── NAV ── */
@@ -118,9 +119,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .cv-block{margin-bottom:2rem}
 .cv-block:last-child{margin-bottom:0}
 .cv-block h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:1rem}
-.cv-item{margin-bottom:1rem}
+.cv-item{margin-bottom:1.4rem}
+.cv-item .cv-list{margin-top:0.5rem}
 .cv-item:last-child{margin-bottom:0}
-.cv-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.cv-head{display:flex;justify-content:space-between;align-items:baseline;gap:0.4rem 1rem;flex-wrap:wrap}
 .cv-role{font-size:0.87rem;font-weight:600}
 .cv-date{font-size:0.7rem;color:var(--gray-light);font-weight:300;white-space:nowrap}
 .cv-org{font-size:0.7rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--mist);margin:0.15rem 0 0.3rem}
@@ -166,6 +168,7 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
   .nav-links{display:none}
   .hamburger{display:flex}
   .hero,.section,.future-band,.contact-wrap,footer{padding-left:1.4rem;padding-right:1.4rem}
+  .section{padding-top:3.5rem;padding-bottom:3.5rem}
   .hero{padding-top:6.5rem;padding-bottom:3rem;min-height:auto}
   .photo-wrap{max-width:230px}
   .work-grid{grid-template-columns:1fr}
@@ -206,7 +209,7 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
     <div class="eyebrow fu"><span class="eyebrow-dot"></span>Personal brand &mdash; Commercial Economics, Amsterdam University of Applied Sciences</div>
     <h1 class="hero-name fu d1">Charlotte<br>van den <em>Kerkhoff</em></h1>
     <p class="hero-prop fu d2">I help organisations turn market intelligence into commercial decisions &mdash; through analysis, communication, and ownership.</p>
-    <p class="hero-sub fu d2">Final-year Commercial Economics student &middot; Marketing intern at Stryker OI Northern Europe &middot; Amsterdam</p>
+    <p class="hero-sub fu d2">Final-year Commercial Economics student &middot; Marketing Intern, Stryker OI Northern Europe (2026) &middot; Amsterdam</p>
     <div class="hero-btns fu d3">
       <a href="#cv" class="btn-primary">View my CV</a>
       <a href="mailto:charlotte.van.den.kerkhoff@hva.nl" class="btn-ghost">Get in touch</a>
@@ -215,8 +218,8 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
   <div class="hero-photo fu d2">
     <div class="photo-wrap">
       <div class="photo-mono">CK</div>
-      <!-- Upload your profile photo as charlotte.jpg in the repo root -->
-      <img src="charlotte.jpg" alt="Charlotte van den Kerkhoff" onerror="this.style.display='none'">
+      <!-- Your profile photo is charlotte.png in the repo root -->
+      <img src="charlotte.png" alt="Charlotte van den Kerkhoff" onerror="this.style.display='none'">
     </div>
   </div>
 </header>
@@ -283,7 +286,7 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
   <div class="label">Who I am</div>
   <h2>Who I <em>am</em></h2>
   <div class="about-text">
-    <p>I&apos;m a final-year <strong>Commercial Economics</strong> student at the Amsterdam University of Applied Sciences, completing my internship at <strong>Stryker Orthopaedic Instruments Northern Europe</strong>. I graduate as valedictorian with a GPA of 8.2.</p>
+    <p>I&apos;m a final-year <strong>Commercial Economics</strong> student at the Amsterdam University of Applied Sciences, completed my marketing internship at <strong>Stryker Orthopaedic Instruments Northern Europe</strong> (Feb &ndash; Jul 2026). Valedictorian of the propedeuse year, GPA 8.2.</p>
     <p>My work sits at the intersection of <strong>analytical thinking and communication</strong> &mdash; I turn complex information into commercially relevant decisions. I want to build a career in <strong>MedTech or a similarly complex B2B sector</strong>, where rigour and purpose reinforce each other.</p>
   </div>
   <div class="video-frame">
@@ -329,7 +332,7 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
 <section class="section bg-default" id="skills">
   <div class="label">Capabilities</div>
   <h2>Skills, <em>with proof</em></h2>
-  <p class="section-intro">No skill bars &mdash; every capability below is tied to something I actually did.</p>
+  <p class="section-intro">Every capability below is tied to something I actually did.</p>
   <div class="skill-row">
     <div class="skill-name">Analytical Thinking</div>
     <div class="skill-desc">From data to insight to recommendation &mdash; not stopping at description.</div>
@@ -365,41 +368,76 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
 </div>
 
 <!-- CV -->
-<!-- CONCEPT CV — Charlotte validates all facts -->
 <section class="section bg-white" id="cv">
   <div class="label">Curriculum vitae</div>
   <h2>My <em>CV</em></h2>
   <div class="cv-cols">
     <div>
       <div class="cv-block">
+        <h3>Profile</h3>
+        <p class="cv-desc">Organized and detail-oriented Commercial Economics student (valedictorian propedeuse year, Amsterdam University of Applied Sciences) with hands-on experience in coordination, process management and stakeholder collaboration. I take ownership, manage multiple priorities and improve operational efficiency through proactive problem-solving. Fluent in Dutch and English.</p>
+      </div>
+      <div class="cv-block">
         <h3>Experience</h3>
         <div class="cv-item">
-          <div class="cv-head"><span class="cv-role">Marketing Intern</span><span class="cv-date">Feb 2026 &ndash; Present</span></div>
-          <div class="cv-org">Stryker OI Northern Europe</div>
-          <p class="cv-desc">End-to-end ownership of five commercial projects in a 5-country team: LVO congress, MIS Foot intelligence, Jetpak audit, Copilot adoption, OI Academy 201 certification.</p>
+          <div class="cv-head"><span class="cv-role">Marketing Intern</span><span class="cv-date">Feb 2026 &ndash; Jul 2026</span></div>
+          <div class="cv-org">Stryker Orthopaedic Instruments Northern Europe</div>
+          <ul class="cv-list">
+            <li>Drove internal adoption of Microsoft Copilot through self-executed trainings.</li>
+            <li>Led end-to-end event management and compliance for congresses; built an ROI framework for future commercial congresses.</li>
+            <li>Conducted MIS Foot market intelligence in a data-scarce environment; built an NL-only predictive data model in Excel.</li>
+            <li>Designed a tracking system for lost and broken products ahead of the Jetpak warehouse audit in Mechelen, keeping ~400% more materials intact.</li>
+          </ul>
         </div>
         <div class="cv-item">
-          <div class="cv-head"><span class="cv-role">Research Project</span><span class="cv-date">2025</span></div>
-          <div class="cv-org">AI Foundry (HvA)</div>
-          <p class="cv-desc">Applied AI tools in a structured research and advisory context.</p>
+          <div class="cv-head"><span class="cv-role">Project Manager</span><span class="cv-date">Aug 2025 &ndash; Feb 2026</span></div>
+          <div class="cv-org">The AI Foundry (AdamI), Amsterdam</div>
+          <ul class="cv-list">
+            <li>Coordinated 10+ professional community meetups and customer events end-to-end.</li>
+            <li>Ran website, LinkedIn and newsletter; social strategies lifted engagement (CTR from 41% to over 75%).</li>
+            <li>Managed the CRM and partner communication (e.g. ABN AMRO, Fortino).</li>
+          </ul>
         </div>
         <div class="cv-item">
-          <div class="cv-head"><span class="cv-role">Marketing &amp; Communications</span><span class="cv-date">2024</span></div>
-          <div class="cv-org">Love the Look</div>
-          <p class="cv-desc">Content creation, social media strategy and campaign coordination for a lifestyle brand.</p>
+          <div class="cv-head"><span class="cv-role">Social Media Content Creator &amp; Sales Assistant</span><span class="cv-date">Sep 2019 &ndash; May 2021</span></div>
+          <div class="cv-org">Love the Look, Rotterdam</div>
+          <ul class="cv-list">
+            <li>Social campaigns lifted brand visibility by 35%.</li>
+            <li>Data-driven content strategy: +20% followers, +15% website traffic.</li>
+          </ul>
         </div>
         <div class="cv-item">
-          <div class="cv-head"><span class="cv-role">Brand &amp; Retail Experience</span><span class="cv-date">2023</span></div>
-          <div class="cv-org">CHANEL</div>
-          <p class="cv-desc">Luxury standards, client-facing communication, and the commercial discipline of a global luxury house.</p>
+          <div class="cv-head"><span class="cv-role">CHANEL Beaut&eacute; Ambassador</span><span class="cv-date">Jan 2017 &ndash; Aug 2019</span></div>
+          <div class="cv-org">Ici Paris XL, The Hague</div>
+          <ul class="cv-list">
+            <li>Grew CHANEL beauty product sales by 30% with tailored, data-backed positioning.</li>
+            <li>Exceeded quarterly sales targets by 120% through leading product-knowledge trainings.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-block">
+        <h3>Academic projects</h3>
+        <div class="cv-item">
+          <div class="cv-head"><span class="cv-role">International Market Expansion Strategy</span><span class="cv-date">May &ndash; Jun 2025</span></div>
+          <div class="cv-org">Henry Westons Cider</div>
+          <p class="cv-desc">Multi-stage market filtering (Pre-filter, BERI, MABA) across 10 countries; selected Ireland and outlined a go-to-market strategy.</p>
+        </div>
+        <div class="cv-item">
+          <div class="cv-head"><span class="cv-role">Marketing Analysis</span><span class="cv-date">Oct 2024 &ndash; Jan 2025</span></div>
+          <div class="cv-org">SuitSupply</div>
+          <p class="cv-desc">Competitive data analysis of brand positioning and landscape; presented actionable insights to leadership.</p>
         </div>
       </div>
       <div class="cv-block">
         <h3>Education</h3>
         <div class="cv-item">
-          <div class="cv-head"><span class="cv-role">BSc Commercial Economics</span><span class="cv-date">2023 &ndash; 2027</span></div>
-          <div class="cv-org">Hogeschool van Amsterdam</div>
-          <p class="cv-desc">Graduating as valedictorian with a GPA of 8.2.</p>
+          <div class="cv-head"><span class="cv-role">BSc Commercial Economics &ndash; Global Marketing</span><span class="cv-date">Sep 2023 &ndash; Jun 2027</span></div>
+          <div class="cv-org">Amsterdam University of Applied Sciences</div>
+          <p class="cv-desc">Valedictorian (propedeuse year), GPA 8.2.</p>
+        </div>
+        <div class="cv-item">
+          <div class="cv-head"><span class="cv-role">Fashion Design</span><span class="cv-date">Sep 2022 &ndash; Jun 2023</span></div>
+          <div class="cv-org">Albeda College, Rotterdam</div>
         </div>
       </div>
     </div>
@@ -407,16 +445,17 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
       <div class="cv-block">
         <h3>Skills</h3>
         <ul class="cv-list">
-          <li><strong>Design:</strong> InDesign, Photoshop, Illustrator, Canva</li>
-          <li><strong>Data:</strong> Excel (advanced), Google Analytics, Tableau, HubSpot</li>
-          <li><strong>Digital:</strong> WordPress, Office 365, SharePoint</li>
-          <li><strong>AI:</strong> Copilot, ChatGPT, Gemini, Claude</li>
+          <li><strong>Office:</strong> Excel (advanced: Pivot Tables, VLOOKUPs, data analysis), Word</li>
+          <li><strong>Data:</strong> SQL, SPSS, Google Analytics, Tableau, CRM systems</li>
+          <li><strong>Content:</strong> creative writing, HubSpot (newsletter), CMS, Luma (event scheduling)</li>
+          <li><strong>Design:</strong> Adobe Creative Cloud (InDesign, Photoshop, Illustrator), Affinity Suite, Canva</li>
+          <li><strong>AI:</strong> Gemini, ChatGPT, Claude, Perplexity</li>
         </ul>
       </div>
       <div class="cv-block">
         <h3>Languages</h3>
         <ul class="cv-list">
-          <li><strong>Dutch</strong> &mdash; native</li>
+          <li><strong>Dutch</strong> &mdash; fluent</li>
           <li><strong>English</strong> &mdash; fluent</li>
         </ul>
       </div>
