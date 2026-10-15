@@ -4,104 +4,102 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Charlotte van den Kerkhoff — Personal Brand</title>
-<meta name="description" content="Charlotte van den Kerkhoff — final-year Commercial Economics student. Marketing at Stryker, project management at The AI Foundry, CHANEL Beaut&eacute; ambassador. Turning market intelligence into commercial decisions.">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Charlotte van den Kerkhoff — final-year Commercial Economics student. Project management at The AI Foundry, CHANEL Beaut&eacute; ambassador. Turning market intelligence into commercial decisions.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
 /* ── TOKENS ── */
 :root{
-  --bg:#FAF7F2; --white:#FFFFFF; --black:#141414;
-  --gray:#6A6A6A; --gray-light:#9A9A9A;
-  --border:#E4DFD8;
-  --mist:#7BAFC8; --mist-light:#D8EAF3; --mist-pale:#EDF5FA;
-  --sand:#C4985C; --sand-light:#F2E5D0;
+  --white:#FFFFFF; --black:#000000; --ink:#111111;
+  --gray:#555555; --gray-light:#8A8A8A;
+  --border:#E2E2E2; --alt:#F6F6F6;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 section[id],div[id]{scroll-margin-top:72px}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--black);overflow-x:hidden;line-height:1.6}
+body{font-family:'Archivo',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;line-height:1.6}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(250,247,242,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:'Fraunces',serif;font-style:italic;font-size:1.2rem;font-weight:600;color:var(--black);text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:var(--white);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;color:var(--black);text-decoration:none;letter-spacing:0.01em}
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
-.nav-links a{font-size:0.71rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color 0.2s;min-height:44px;display:inline-flex;align-items:center}
+.nav-links a{font-size:0.71rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color 0.2s;min-height:44px;display:inline-flex;align-items:center}
 .nav-links a:hover{color:var(--black)}
-.nav-cta{background:var(--black)!important;color:var(--white)!important;padding:0.65rem 1.4rem;border-radius:50px;transition:background 0.2s!important}
-.nav-cta:hover{background:var(--mist)!important;color:var(--white)!important}
+.nav-cta{background:var(--black)!important;color:var(--white)!important;padding:0.65rem 1.4rem;border:1px solid var(--black);border-radius:0;transition:background 0.2s,color 0.2s!important}
+.nav-cta:hover{background:var(--white)!important;color:var(--black)!important}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
-.hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.28s ease,opacity 0.28s ease;border-radius:1px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:transform 0.28s ease,opacity 0.28s ease;border-radius:0}
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.nav-panel{display:none;position:fixed;top:60px;left:0;right:0;z-index:190;background:var(--bg);border-bottom:1px solid var(--border);padding:1rem 2rem 1.5rem;flex-direction:column}
+.nav-panel{display:none;position:fixed;top:60px;left:0;right:0;z-index:190;background:var(--white);border-bottom:1px solid var(--border);padding:1rem 2rem 1.5rem;flex-direction:column}
 .nav-panel.open{display:flex}
 .nav-panel a{font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray);text-decoration:none;padding:0.9rem 0;border-bottom:1px solid var(--border);min-height:48px;display:flex;align-items:center}
 .nav-panel a:last-child{border-bottom:none}
 
 /* ── HERO ── */
 .hero{min-height:92vh;padding:8rem 4rem 4rem;display:grid;grid-template-columns:1fr 360px;gap:4rem;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:0.6rem;background:var(--mist-pale);color:var(--mist);border:1px solid var(--mist-light);border-radius:50px;padding:0.4rem 1rem;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.6rem}
-.eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--mist);flex-shrink:0}
-.hero-name{font-family:'Fraunces',serif;font-size:clamp(2.9rem,5.5vw,5.2rem);font-weight:700;line-height:1.02;letter-spacing:-0.01em;margin-bottom:1.4rem}
-.hero-name em{font-style:italic;font-weight:300;color:var(--mist)}
-.hero-prop{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:400;line-height:1.55;max-width:480px;margin-bottom:0.9rem}
-.hero-slogan{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.08rem;color:var(--sand);margin-bottom:0.9rem}
+.eyebrow{display:inline-flex;align-items:center;gap:0.6rem;color:var(--black);font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.6rem}
+.eyebrow-dot{width:5px;height:5px;background:var(--black);flex-shrink:0}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.9rem,5.5vw,5.2rem);font-weight:600;line-height:1.02;letter-spacing:-0.01em;margin-bottom:1.4rem;color:var(--black)}
+.hero-name em{font-style:italic;font-weight:400;color:var(--black)}
+.hero-prop{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:400;line-height:1.55;max-width:480px;margin-bottom:0.9rem}
+.hero-slogan{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:1.08rem;color:var(--black);margin-bottom:0.9rem}
 .hero-sub{color:var(--gray);font-size:0.85rem;font-weight:300;margin-bottom:2.2rem;max-width:480px;line-height:1.8}
 .hero-btns{display:flex;gap:0.9rem;flex-wrap:wrap}
-.btn-primary{background:var(--black);color:var(--white);padding:0.95rem 2.2rem;border-radius:50px;font-size:0.73rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:48px;transition:background 0.2s}
-.btn-primary:hover{background:var(--mist)}
-.btn-ghost{color:var(--black);padding:0.95rem 2.2rem;border-radius:50px;font-size:0.73rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:48px;border:1.5px solid var(--border);transition:border-color 0.2s,background 0.2s}
-.btn-ghost:hover{border-color:var(--mist);background:var(--mist-pale)}
+.btn-primary{background:var(--black);color:var(--white);padding:0.95rem 2.2rem;border:1px solid var(--black);border-radius:0;font-size:0.73rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:48px;transition:background 0.2s,color 0.2s}
+.btn-primary:hover{background:var(--white);color:var(--black)}
+.btn-ghost{color:var(--black);padding:0.95rem 2.2rem;border-radius:0;font-size:0.73rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:48px;border:1px solid var(--black);transition:background 0.2s,color 0.2s}
+.btn-ghost:hover{background:var(--black);color:var(--white)}
 .hero-photo{display:flex;justify-content:center}
-.photo-wrap{width:100%;max-width:340px;aspect-ratio:4/5;border-radius:55% 45% 48% 52%/50% 52% 48% 50%;overflow:hidden;background:var(--mist-light);box-shadow:0 20px 50px rgba(20,20,20,0.1);position:relative;display:flex;align-items:center;justify-content:center}
-.photo-mono{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:4.2rem;color:var(--mist)}
+.photo-wrap{width:100%;max-width:340px;aspect-ratio:4/5;border-radius:0;overflow:hidden;background:var(--alt);position:relative;display:flex;align-items:center;justify-content:center}
+.photo-mono{font-family:'Playfair Display',serif;font-weight:600;font-size:4.2rem;color:var(--gray-light)}
 .photo-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
 
 /* ── SECTION BASE ── */
 .section{padding:5rem 4rem}
 .bg-white{background:var(--white)}
-.bg-default{background:var(--bg)}
-.label{font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:0.7rem;margin-bottom:0.7rem}
-.label::before{content:'';display:block;width:1.8rem;height:1.5px;background:var(--sand);flex-shrink:0}
-.section h2{font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:700;line-height:1.15;margin-bottom:1rem}
-.section h2 em{font-style:italic;font-weight:300;color:var(--mist)}
+.bg-default{background:var(--alt)}
+.label{font-size:0.65rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);display:flex;align-items:center;gap:0.7rem;margin-bottom:0.7rem}
+.label::before{content:'';display:block;width:1.8rem;height:2px;background:var(--black);flex-shrink:0}
+.section h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:600;line-height:1.15;margin-bottom:1rem;color:var(--black)}
+.section h2 em{font-style:italic;font-weight:400;color:var(--black)}
 .section-intro{color:var(--gray);font-size:0.92rem;line-height:1.8;font-weight:300;max-width:560px;margin-bottom:2.5rem}
 
 /* ── WORK ── */
 .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:1.1rem}
-.work-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.8rem;transition:transform 0.25s,box-shadow 0.25s,border-color 0.2s}
-.work-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(20,20,20,0.08);border-color:var(--mist-light)}
-.work-tag{display:inline-block;font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mist);background:var(--mist-pale);border:1px solid var(--mist-light);border-radius:50px;padding:0.25rem 0.8rem;margin-bottom:0.8rem}
-.work-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;line-height:1.35;margin-bottom:0.8rem}
+.work-card{background:var(--white);border:1px solid var(--border);border-radius:0;padding:1.8rem;transition:border-color 0.2s}
+.work-card:hover{border-color:var(--black)}
+.work-tag{display:inline-block;font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);margin-bottom:0.8rem}
+.work-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;line-height:1.35;margin-bottom:0.8rem}
 .work-body{font-size:0.84rem;color:var(--gray);line-height:1.75;font-weight:300}
 .work-body p{margin-bottom:0.6rem}
-.work-metric{margin-top:1rem;background:var(--mist-pale);border-left:2.5px solid var(--mist);border-radius:0 10px 10px 0;padding:0.8rem 1rem;font-size:0.85rem;font-weight:600;color:var(--black)}
+.work-metric{margin-top:1rem;background:var(--alt);border-left:2px solid var(--black);border-radius:0;padding:0.8rem 1rem;font-size:0.85rem;font-weight:600;color:var(--black)}
 .quotes{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
-.quote{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.6rem}
-.quote-text{font-family:'Fraunces',serif;font-style:italic;font-size:1rem;line-height:1.6;margin-bottom:0.6rem}
+.quote{background:var(--alt);border:1px solid var(--border);border-radius:0;padding:1.5rem 1.6rem}
+.quote-text{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;line-height:1.6;margin-bottom:0.6rem}
 .quote-who{font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray)}
-.quote-role{font-size:0.68rem;color:var(--mist)}
+.quote-role{font-size:0.68rem;color:var(--gray)}
 
 /* ── ABOUT ── */
 .about-text{max-width:640px;margin-bottom:2.5rem}
 .about-text p{color:var(--gray);font-size:0.92rem;line-height:1.9;font-weight:300;margin-bottom:1rem}
 .about-text strong{color:var(--black);font-weight:600}
-.video-frame{max-width:720px;aspect-ratio:16/9;border:2px dashed var(--border);border-radius:16px;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;text-align:center;padding:2rem}
-.video-emoji{font-size:2.2rem}
+.video-frame{max-width:340px;aspect-ratio:9/16;margin:0 auto;border:1px solid var(--border);border-radius:0;background:var(--alt);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;text-align:center;padding:2rem}
+.video-player{display:block;width:100%;max-width:340px;aspect-ratio:9/16;object-fit:cover;background:#000;margin:0 auto}
 .video-title{font-size:0.95rem;font-weight:600}
 .video-sub{font-size:0.78rem;color:var(--gray);font-weight:300;max-width:380px;line-height:1.7}
 .values-row{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.value-chip{font-size:0.78rem;font-weight:600;color:var(--black);background:var(--white);border:1.5px solid var(--sand-light);border-radius:50px;padding:0.55rem 1.15rem}
+.value-chip{font-size:0.78rem;font-weight:600;color:var(--black);background:var(--white);border:1px solid var(--black);border-radius:0;padding:0.55rem 1.15rem}
 /* ── 360 FEEDBACK ── */
 .fb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
 
 /* ── QUADRANTS ── */
 .quad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-.quad-card{background:var(--bg);border-radius:16px;padding:1.7rem;border:1px solid var(--border)}
-.quad-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:1.1rem;line-height:1.35}
+.quad-card{background:var(--alt);border-radius:0;padding:1.7rem;border:1px solid var(--border)}
+.quad-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin-bottom:1.1rem;line-height:1.35}
 .quad-row{margin-bottom:0.9rem}
 .quad-row:last-child{margin-bottom:0}
-.quad-label{font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mist);margin-bottom:0.25rem}
+.quad-label{font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);margin-bottom:0.25rem}
 .quad-text{font-size:0.8rem;color:var(--gray);line-height:1.7;font-weight:300}
 
 /* ── SKILLS ── */
@@ -110,46 +108,49 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .skill-name{font-weight:600;font-size:0.9rem}
 .skill-desc{font-size:0.83rem;color:var(--gray);font-weight:300;line-height:1.7}
 .skill-proof{font-size:0.83rem;line-height:1.7;font-weight:300;color:var(--gray)}
-.skill-proof strong{display:block;font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist);margin-bottom:0.25rem}
+.skill-proof strong{display:block;font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);margin-bottom:0.25rem}
 
 /* ── FUTURE BAND ── */
-.future-band{background:var(--mist-pale);border-top:1px solid var(--mist-light);border-bottom:1px solid var(--mist-light);padding:3.5rem 4rem;text-align:center}
-.future-band .label{color:var(--mist);justify-content:center}
-.future-band h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:1rem}
-.future-band h2 em{font-style:italic;font-weight:300;color:var(--mist)}
-.future-band p{max-width:620px;margin:0 auto;color:var(--gray);font-size:0.92rem;font-weight:300;line-height:1.85}
+.future-band{background:var(--black);padding:3.5rem 4rem;text-align:center;color:var(--white)}
+.future-band .label{color:var(--white);justify-content:center}
+.future-band .label::before{background:var(--white)}
+.future-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:600;margin-bottom:1rem;color:var(--white)}
+.future-band h2 em{font-style:italic;font-weight:400;color:var(--white)}
+.future-band p{max-width:620px;margin:0 auto;color:rgba(255,255,255,0.75);font-size:0.92rem;font-weight:300;line-height:1.85}
+.future-band strong{color:var(--white)}
 
 /* ── CV ── */
 .cv-cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 4rem;align-items:start}
 .cv-block{margin-bottom:2rem}
 .cv-block:last-child{margin-bottom:0}
-.cv-block h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:1rem}
+.cv-block h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin-bottom:1rem}
 .cv-item{margin-bottom:1.4rem}
 .cv-item .cv-list{margin-top:0.5rem}
 .cv-item:last-child{margin-bottom:0}
 .cv-head{display:flex;justify-content:space-between;align-items:baseline;gap:0.4rem 1rem;flex-wrap:wrap}
 .cv-role{font-size:0.87rem;font-weight:600}
 .cv-date{font-size:0.7rem;color:var(--gray-light);font-weight:300;white-space:nowrap}
-.cv-org{font-size:0.7rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--mist);margin:0.15rem 0 0.3rem}
+.cv-org{font-size:0.7rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--black);margin:0.15rem 0 0.3rem}
 .cv-desc{font-size:0.82rem;color:var(--gray);line-height:1.7;font-weight:300}
 .cv-list{list-style:none}
 .cv-list li{font-size:0.82rem;color:var(--gray);line-height:1.7;font-weight:300;margin-bottom:0.4rem;padding-left:1.1rem;position:relative}
-.cv-list li::before{content:'\2013';position:absolute;left:0;color:var(--sand)}
+.cv-list li::before{content:'\2013';position:absolute;left:0;color:var(--black)}
 .cv-list strong{color:var(--black);font-weight:600}
 
 /* ── CONTACT ── */
 .contact-wrap{padding:5.5rem 4rem;background:var(--black);text-align:center}
 .contact-inner{max-width:520px;margin:0 auto}
-.contact-wrap .label{color:rgba(164,200,220,0.75);justify-content:center}
-.contact-wrap h2{font-family:'Fraunces',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;margin-bottom:0.8rem;color:var(--white)}
-.contact-wrap h2 em{font-style:italic;font-weight:300;color:rgba(164,200,220,0.85)}
+.contact-wrap .label{color:rgba(255,255,255,0.6);justify-content:center}
+.contact-wrap .label::before{background:rgba(255,255,255,0.6)}
+.contact-wrap h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:600;line-height:1.15;margin-bottom:0.8rem;color:var(--white)}
+.contact-wrap h2 em{font-style:italic;font-weight:400;color:var(--white)}
 .contact-sub{color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.8;font-weight:300;margin-bottom:2.2rem}
 .contact-links{display:flex;justify-content:center;gap:0.8rem;flex-wrap:wrap}
-.contact-link{display:inline-flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.78rem;padding:0.85rem 1.6rem;min-height:48px;border:1px solid rgba(255,255,255,0.12);border-radius:50px;transition:border-color 0.2s,color 0.2s,background 0.2s}
-.contact-link:hover{border-color:var(--mist);color:var(--white);background:rgba(123,175,200,0.1)}
+.contact-link{display:inline-flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.78rem;padding:0.85rem 1.6rem;min-height:48px;border:1px solid rgba(255,255,255,0.12);border-radius:0;transition:border-color 0.2s,color 0.2s}
+.contact-link:hover{border-color:var(--white);color:var(--white)}
 footer{padding:1.5rem 4rem;background:var(--black);border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
 footer span{font-size:0.71rem;color:rgba(255,255,255,0.24)}
-footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+footer a{font-size:0.71rem;color:rgba(255,255,255,0.6);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
 
 /* ── FADE IN ── */
 .fu{opacity:0;transform:translateY(22px);animation:fadeup 0.7s cubic-bezier(0.34,1.2,0.64,1) forwards}
@@ -162,6 +163,7 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
   .hero{grid-template-columns:1fr;gap:3rem;text-align:center;padding-top:7rem}
   .hero-prop,.hero-sub{max-width:100%}
   .hero-btns{justify-content:center}
+  .eyebrow{justify-content:center}
   .photo-wrap{max-width:280px}
   .quad-grid{grid-template-columns:repeat(2,1fr)}
   .skill-row{grid-template-columns:1fr 1fr}
@@ -216,7 +218,7 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
     <h1 class="hero-name fu d1">Charlotte<br>van den <em>Kerkhoff</em></h1>
     <p class="hero-prop fu d2">I help organisations turn market intelligence into commercial decisions &mdash; through analysis, communication, and ownership.</p>
     <p class="hero-slogan fu d2">&ldquo;My life will become extraordinary.&rdquo;</p>
-    <p class="hero-sub fu d2">Final-year Commercial Economics student &middot; Marketing Intern, Stryker OI Northern Europe (2026) &middot; Amsterdam</p>
+    <p class="hero-sub fu d2">Final-year Commercial Economics student &middot; Amsterdam</p>
     <div class="hero-btns fu d3">
       <a href="#cv" class="btn-primary">View my CV</a>
       <a href="mailto:charlotte.van.den.kerkhoff@hva.nl" class="btn-ghost">Get in touch</a>
@@ -311,7 +313,8 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
   <div class="label">Who I am</div>
   <h2>Who I <em>am</em></h2>
   <div class="about-text">
-    <p>I&apos;m a final-year <strong>Commercial Economics</strong> student at the Amsterdam University of Applied Sciences, completed my marketing internship at <strong>Stryker Orthopaedic Instruments Northern Europe</strong> (Feb &ndash; Jul 2026). Valedictorian of the propedeuse year, GPA 8.2.</p>
+    <p>I&apos;m a final-year <strong>Commercial Economics</strong> student at the Amsterdam University of Applied Sciences. Valedictorian of the propedeuse year, GPA 8.2.</p>
+    <p>As <strong>Project Manager at The AI Foundry</strong> (Aug 2025 &ndash; Feb 2026), I coordinated 10+ professional community meetups and customer events end-to-end. I ran the website, LinkedIn and newsletter, and managed the CRM and partner communication &mdash; with partners such as ABN AMRO and Fortino. My social strategies lifted engagement, with CTR rising from 41% to over 75%.</p>
     <p>My work sits at the intersection of <strong>analytical thinking and communication</strong> &mdash; I turn complex information into commercially relevant decisions. I want to build a career in <strong>MedTech or a similarly complex B2B sector</strong>, where rigour and purpose reinforce each other.</p>
     <p>My personality type is <strong>ENTJ-T</strong>: organised and decisive &mdash; I like clear decisions, and I finish what I start. What drives me is <strong>progress</strong>: new places, new people and new problems to figure out, and getting better at what I do. People around me describe me the same way: driven, caring and self-confident; adventurous, independent and resilient.</p>
     <p>Before marketing, there was design: I studied <strong>Fashion Design</strong> and still draw, paint and sew. That creative side is why my interests sit in two worlds at once &mdash; finance and economics on one hand, media, design and culture on the other.</p>
@@ -323,12 +326,7 @@ footer a{font-size:0.71rem;color:rgba(196,152,92,0.6);text-decoration:none;min-h
     <span class="value-chip">Humor</span>
     <span class="value-chip">Joy</span>
   </div>
-  <div class="video-frame">
-    <div class="video-emoji">&#x1F3AC;</div>
-    <div class="video-title">Personal video &mdash; coming soon</div>
-    <div class="video-sub">A 60-second introduction &mdash; recording in progress.</div>
-  </div>
-  <!-- When your video is ready, replace the .video-frame div above with: <video controls preload="metadata" src="personal-video.mp4" style="width:100%;border-radius:16px"></video> -->
+  <video class="video-player" controls preload="metadata" src="personal-video.mp4"></video>
 </section>
 
 <!-- CORE QUADRANTS (not in nav — kept for the university assessment) -->
